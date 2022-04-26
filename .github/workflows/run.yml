@@ -1,0 +1,14 @@
+on: push
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout
+    - uses: actions/checkout
+      with:
+        repository: lwille/shared-workflows
+        path: .shared-actions
+        ref: main
+    - uses: .shared-actions/.github/workflows/shared.yml
+
